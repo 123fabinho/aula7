@@ -1,0 +1,30 @@
+<div class="container">
+  <button class="btn btn-success">carrinho {{carrinho.length}}</button>
+</div>
+<div class="container">
+  <h1>novidades</h1>
+  <div class="row">
+    <div *ngFor="let p of produtos" class="col-md-3">
+      <img src="../../assets/{{p.imagem}}" width="100%">
+      <h2> {{p.nome}}</h2>
+      <p>{{p.preco | currency:'BRL':true}}</p>
+      <button class="btn btn-primary" (click)="addCarrinho(p)">compra</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3> Carrinho</h3>
+  <p>Total: {{total}}</p>
+  <div *ngFor="let p of carrinho">
+
+    <div class="row">
+      <div class="col-md-2">
+        <img src="../../assets/{{p.imagem}}" width="100%">
+      </div>
+      <div class="col-md-8">{{p.nome}}</div>
+      <div class="col-md-2">{{p.preco | currency:'BRL':true}}</div>
+    </div>
+
+  </div>
+</div>
